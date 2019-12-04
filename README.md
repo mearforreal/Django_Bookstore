@@ -10,4 +10,5 @@ Steps:
 
 1. Pull this repository
 2. Activate virtualenv
-3. run "python manage.py runserver" in cmd or Windows Powershell
+3. Run "python manage.py runserver" in cmd or Windows Powershell
+4. Copy the link, Paste on any browser that suits you
