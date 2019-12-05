@@ -10,5 +10,6 @@ Steps:
 
 1. Pull this repository
 2. Activate virtualenv
-3. Run "python manage.py runserver" in cmd or Windows Powershell
-4. Copy the link, Paste on any browser that suits you
+3. install dependencies with `pip install -r requirements.txt`
+4. Run "python manage.py runserver" in cmd or Windows Powershell
+5. Copy the link, Paste on any browser that suits you
