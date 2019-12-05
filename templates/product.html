@@ -11,7 +11,7 @@
         <!--Grid column-->
         <div class="col-md-6 mb-4">
 
-          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/14.jpg" class="img-fluid" alt="">
+          <img src="{{ item.image.url }}" class="img-fluid" alt="">
 
         </div>
         <!--Grid column-->
@@ -27,14 +27,23 @@
                 <span class="badge purple mr-1">{{ object.get_category_display }}</span>
               </a>
               <a href="">
-                <span class="badge blue mr-1">New</span>
-              </a>
-              <a href="">
-                <span class="badge red mr-1">Bestseller</span>
+                  {% if item.label == "p" %}
+                    <span class="badge red mr-1 {{ item.get_label_display }}-color">
+                          NEW
+                    </span>
+                  {% elif item.label == "d" %}
+                    <span class="badge red mr-1 {{ item.get_label_display }}-color">
+                          BESTSELLER
+                    </span>
+                    {% else %}
+
+                    {% endif %}
+                </span>
               </a>
             </div>
 
             <p class="lead">
+                <h>{{ item.title }}</h>
 
               {% if object.discount_price %}
                     <span class="mr-1">
@@ -45,7 +54,8 @@
                    <span>${{ object.price }}</span>
                     {% endif %}
             </p>
-
+              <p class="lead font-weight-bold">Author:</p>
+              <p>{{ item.author }}</p>
             <p class="lead font-weight-bold">Description</p>
 
             <p>{{ object.description }}</p>
@@ -76,7 +86,7 @@
 
       <hr>
 
-      <!--Grid row-->
+      {% comment %}<!--Grid row-->
       <div class="row d-flex justify-content-center wow fadeIn">
 
         <!--Grid column-->
@@ -123,7 +133,7 @@
 
       </div>
       <!--Grid row-->
-
+        {% endcomment %}
     </div>
   </main>
 
